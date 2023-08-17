@@ -11,9 +11,9 @@ sfdx force:package:install -p 04tB0000000UQjfIAG --noprompt -w 5
 
 #bulk load Closed Cases
 sfdx shane:data:dates:update -r 09-24-2020
-sfdx force:data:bulk:upsert -s Case -f data-modified/extracttaskclean1.csv -i ID
+sfdx force:data:bulk:upsert -s Task -f data-modified/extracttaskclean1.csv -i ID
 
 #load task
-sfdx force:data:bulk:upsert -s Task -f data-modified/ClosedCases.csv -i External_Id__c
+sfdx force:data:bulk:upsert -s Case -f data-modified/ClosedCases.csv -i External_Id__c
 
 sfdx force:org:open
